@@ -47,7 +47,7 @@ class JSearchSource(BaseSource):
                     if not success:
                         continue
                     data = resp.json()
-                    for item in data.get("data", []):
+                    for item in (data.get("data") or {}).get("jobs", []):
                         job = self._map_job(item)
                         if job:
                             all_jobs.append(job)
