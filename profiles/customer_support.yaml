@@ -15,6 +15,9 @@ search:
     - "Email Support Specialist"
     - "Remote Customer Support"
     - "Virtual Assistant Customer Service"
+    - "Customer Support LATAM"
+    - "Remote Customer Service Latin America"
+    - "Bilingual Customer Support Spanish"
 
   positive_title_keywords:
     - "customer support"
@@ -38,6 +41,11 @@ search:
     - "on-site only"
     - "director"
     - "vp "
+    - "us citizens only"
+    - "must be based in the us"
+    - "us work authorization required"
+    - "no visa sponsorship"           # often paired with US-only eligibility
+    - "security clearance"            # near-guaranteed US-only requirement
 
   # "relevant_tech" repurposed as tools/platforms for scoring match
   relevant_tech:
@@ -55,7 +63,10 @@ search:
     - "Google Sheets"
 
   jsearch:
-    country: "us"          # change to your target market, e.g. "do" for Dominican Republic
+    country: "us"          # NOTE: this filters by where the job was POSTED, not who's eligible.
+                            # Keep as "us" to catch the largest pool of remote-friendly listings —
+                            # LATAM eligibility gets caught via keywords/signals below instead,
+                            # since most global-remote roles are still posted under "us".
     posted_within_days: 3
     remote_only: true
 
@@ -73,6 +84,12 @@ scoring:
     - "Freshdesk"
     - "Intercom"
   domain_signals:
+    - "latam"
+    - "latin america"
+    - "remote worldwide"
+    - "remote global"
+    - "remote anywhere"
+    - "bilingual spanish"
     - "remote"
     - "work from home"
     - "async"
@@ -80,9 +97,19 @@ scoring:
     - "night shift"          # relevant if targeting US-hours coverage from LATAM
 
 location:
-  # adjust to your actual base / timezone flexibility
-  india_positive_keywords: []   # not applicable — repurpose or leave empty
-  india_negative_keywords: []
+  # repurposed: "positive" keywords now boost score, "negative" ones penalize/filter
+  india_positive_keywords:      # field name unchanged from original schema — used as general "positive location" list
+    - "latam"
+    - "latin america"
+    - "remote worldwide"
+    - "remote global"
+    - "anywhere"
+  india_negative_keywords:      # field name unchanged — used as "negative location" list
+    - "us only"
+    - "united states only"
+    - "must reside in the us"
+    - "onsite"
+    - "hybrid"
   timezone_compatible:
     - "EST"
     - "CST"
