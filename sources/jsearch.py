@@ -42,6 +42,7 @@ class JSearchSource(BaseSource):
                     params = {**clean_q, "num_pages": 1}
                     resp = await client.get(self.BASE_URL, headers=headers, params=params)
                     success = resp.status_code == 200
+                    print(f"[JSEARCH DEBUG] url={resp.url} status={resp.status_code} body={resp.text[:500]}", flush=True)
                     log_api_call("jsearch", success=success, notes=q.get("query", ""))
                     if not success:
                         continue
