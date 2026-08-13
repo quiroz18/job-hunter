@@ -58,7 +58,7 @@ TITLE_KEYWORDS_NEGATIVE = [
     "intern", "internship", "trainee", "junior",
 ]
 
-# ── Location / India Remote Filtering ──
+# ── Location / LATAM Remote Filtering ──
 
 # Keywords that CONFIRM India/Asia people can apply
 LOCATION_INDIA_POSITIVE = [

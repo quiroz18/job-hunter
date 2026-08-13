@@ -27,7 +27,7 @@ Shows counts for:
 | Source | greenhouse:stripe, jsearch, remotive, etc. |
 | Status | new / reviewed / applied / stale |
 | Min Score | 30+ / 50+ / 60+ / 70+ |
-| India Remote | India Friendly / India + Maybe / Not India |
+| LATAM Remote | LATAM Friendly / LATAM + Maybe / Not LATAM |
 | Location | Free text (Bangalore, Remote, etc.) |
 | Tech | Filter by tech stack keyword (python, django) |
 

@@ -11,7 +11,7 @@ SCOPES = [
 
 # Column headers that go into the sheet
 HEADERS = [
-    "Title", "Company", "Location", "India Friendly", "Location Note",
+    "Title", "Company", "Location", "LATAM Friendly", "Location Note",
     "Relevance Score", "Tech Stack", "Experience Level", "Salary",
     "Job URL", "Source", "Posted Date", "Status", "Company Domain",
 ]
