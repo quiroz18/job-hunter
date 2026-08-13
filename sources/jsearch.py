@@ -12,7 +12,7 @@ from core.database import log_api_call
 
 class JSearchSource(BaseSource):
     name = "jsearch"
-    BASE_URL = "https://jsearch.p.rapidapi.com/search"
+BASE_URL = "https://jsearch.p.rapidapi.com/search-v2"
 
     def __init__(self, queries: list[dict] = None):
         # Queries are now sourced from the DB (search_queries table), which is
