@@ -34,7 +34,12 @@ class JSearchSource(BaseSource):
         async with httpx.AsyncClient(timeout=60) as client:
             for q in self.queries:
                 try:
-                    params = {**q, "page": 1, "num_pages": 1, "employment_types": "FULLTIME"}
+                    clean_q = {**q}
+                    if "country" in clean_q:
+                        clean_q["country"] = clean_q["country"].lower()
+                    if "remote_jobs_only" in clean_q:
+                        clean_q["work_from_home"] = clean_q.pop("remote_jobs_only")
+                    params = {**clean_q, "num_pages": 1}
                     resp = await client.get(self.BASE_URL, headers=headers, params=params)
                     success = resp.status_code == 200
                     log_api_call("jsearch", success=success, notes=q.get("query", ""))
