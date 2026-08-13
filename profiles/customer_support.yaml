@@ -1,0 +1,145 @@
+# profiles/customer_support.yaml
+# Import via the /profile page ("Import" -> select this file / paste this slug)
+# or POST /api/profiles/import with slug "customer_support"
+
+name: "Customer Support / Backoffice"
+description: "Email & chat support, customer service, and backoffice/data-entry roles"
+
+search:
+  default_terms:
+    - "Customer Support Specialist"
+    - "Customer Service Representative"
+    - "Backoffice Associate"
+    - "Back Office Support"
+    - "Chat Support Agent"
+    - "Email Support Specialist"
+    - "Remote Customer Support"
+    - "Virtual Assistant Customer Service"
+
+  positive_title_keywords:
+    - "customer support"
+    - "customer service"
+    - "backoffice"
+    - "back office"
+    - "chat support"
+    - "email support"
+    - "help desk"
+    - "client support"
+    - "support specialist"
+    - "support representative"
+    - "support agent"
+
+  negative_title_keywords:
+    - "customer success manager"      # leadership/CS strategy, not front-line support
+    - "sales"
+    - "account executive"
+    - "field technician"
+    - "in-store"
+    - "on-site only"
+    - "director"
+    - "vp "
+
+  # "relevant_tech" repurposed as tools/platforms for scoring match
+  relevant_tech:
+    - "Zendesk"
+    - "Freshdesk"
+    - "Intercom"
+    - "Salesforce Service Cloud"
+    - "HubSpot Service Hub"
+    - "Gorgias"
+    - "Help Scout"
+    - "Live chat"
+    - "CRM"
+    - "Ticketing system"
+    - "Excel"
+    - "Google Sheets"
+
+  jsearch:
+    country: "us"          # change to your target market, e.g. "do" for Dominican Republic
+    posted_within_days: 3
+    remote_only: true
+
+scoring:
+  experience_target: "any"   # fresher | junior | mid | senior | any
+  min_score_to_show: 60
+  min_score_to_store: 40
+  weights:                   # must sum to 100
+    title: 35
+    tech: 15
+    experience: 20
+    signals: 30
+  core_tech:
+    - "Zendesk"
+    - "Freshdesk"
+    - "Intercom"
+  domain_signals:
+    - "remote"
+    - "work from home"
+    - "async"
+    - "flexible hours"
+    - "night shift"          # relevant if targeting US-hours coverage from LATAM
+
+location:
+  # adjust to your actual base / timezone flexibility
+  india_positive_keywords: []   # not applicable — repurpose or leave empty
+  india_negative_keywords: []
+  timezone_compatible:
+    - "EST"
+    - "CST"
+    - "PST"
+    - "Americas"
+    - "LATAM"
+  timezone_incompatible:
+    - "APAC only"
+    - "EMEA only"
+
+outreach:
+  candidate_name: "Ricardo"
+  bio: >
+    Customer support & chat/email specialist with hands-on experience
+    resolving tickets, managing CRM workflows, and hitting response-time
+    and CSAT targets. Comfortable working async across time zones.
+  achievements:
+    - "Consistently met first-response-time SLAs"
+    - "Handled high-volume ticket queues across email and live chat"
+    - "Built/optimized help-desk workflows and macros to cut resolution time"
+  core_tech:
+    - "Zendesk"
+    - "Freshdesk"
+    - "CRM tools"
+  extra_tech:
+    - "Excel/Google Sheets"
+    - "Basic troubleshooting"
+
+  short_dm_template: >
+    Hi {contact_first_name}, saw the {job_title} opening at {company}.
+    I focus on email/chat support and CRM ticket workflows — would love
+    to connect and learn more about the role.
+
+  long_dm_template: >
+    Hi {contact_first_name},
+
+    I came across the {job_title} role at {company} and wanted to reach out
+    directly. I specialize in customer support (email + live chat), managing
+    high ticket volumes while keeping response-time and CSAT targets on track,
+    and I'm comfortable working across CRM/help-desk tools like Zendesk and
+    Freshdesk.
+
+    Would love to connect and hear more about what you're looking for on
+    the team.
+
+    Best,
+    Ricardo
+
+  linkedin_search_titles:
+    - "Customer Support Manager"
+    - "Head of Customer Support"
+    - "Customer Experience Manager"
+    - "HR"
+    - "Talent Acquisition"
+    - "Recruiter"
+
+  email_greeting: "Hi,"
+  sender_email: ""            # leave blank — controlled by .env SENDER_EMAIL
+  recipient_email: ""         # your inbox — overrides .env RECIPIENT_EMAIL if set
+  email_digest_subject_role: "Customer Support"
